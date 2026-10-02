@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <!--
   JAK EDYTOWAĆ TĘ STRONĘ (SWEETO)
   - Teksty: zmieniaj bezpośrednio tutaj, między znacznikami (np. <p>Twój tekst</p>).
@@ -17,6 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <body>
 <!-- =====================================================================
@@ -145,7 +147,12 @@
 <div class="f"><label for="imie">Imię *</label><input id="imie" name="imie" autocomplete="given-name"><span class="err"></span></div>
 <div class="f"><label for="tel">Telefon</label><input id="tel" name="tel" type="tel" autocomplete="tel"><span class="err"></span></div>
 <div class="f full"><label for="mail">Adres e-mail</label><input id="mail" name="mail" type="email" autocomplete="email"><span class="err"></span></div>
-<div class="f"><label for="data">Data wydarzenia *</label><input id="data" name="data" type="date"><span class="err"></span></div>
+<div class="f">
+    <label for="data">Data wydarzenia *</label>
+    <input id="data" name="data" type="text" inputmode="numeric"
+           placeholder="dd.mm.rrrr" maxlength="10" autocomplete="off">
+    <span class="err"></span>
+</div>
 <div class="f"><label for="miejsce">Miejsce wydarzenia *</label><input id="miejsce" name="miejsce"><span class="err"></span></div>
 <div class="f"><label for="rodzaj">Rodzaj wydarzenia *</label><select id="rodzaj" name="rodzaj"><option value="">Wybierz…</option><option>Wesele</option><option>Festyn / odpust</option><option>Impreza firmowa</option><option>Piknik / impreza plenerowa</option><option>Urodziny / komunia</option><option>Inne</option></select><span class="err"></span></div>
 <div class="f"><label for="goscie">Przewidywana liczba gości</label><input id="goscie" name="goscie" type="number" min="1" inputmode="numeric"></div>
@@ -171,6 +178,8 @@
 </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pl.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
