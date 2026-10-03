@@ -190,14 +190,19 @@
             })
         })
         .then(function (res) {
-            if (!res.ok) throw new Error('blad');
+            if (!res.ok) {
+                return res.text().then(function (t) {
+                    throw new Error(res.status + ': ' + t);
+                });
+            }
             f.reset();
             fp.clear();
             $('ok').style.display = 'block';
             $('ok').scrollIntoView({ block: 'center' });
         })
-        .catch(function () {
-            alert('Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na imprezysweeto@gmail.com.');
+        .catch(function (err) {
+            console.error(err);
+            alert('Błąd: ' + err.message);
         })
         .finally(function () {
             if (btn) { btn.disabled = false; }
