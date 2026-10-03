@@ -9,19 +9,22 @@
   - Podgląd na żywo: rozszerzenie Live Server w VS Code (prawy przycisk na index.html -> Open with Live Server).
 -->
 <html lang="pl">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<!-- TUTAJ ZMIENIASZ tytuł karty i opis widoczny w Google -->
-<title>SWEETO — Lody, Gofry i Słodkie Atrakcje na Imprezy | Rybnik i Śląsk</title>
-<meta name="description" content="SWEETO zapewnia lody tajskie, świderki, gofry, granitę, popcorn i watę cukrową na wesela, festyny, imprezy firmowe i wydarzenia na Śląsku. Sprawdź dostępność terminu.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+     <!-- TUTAJ ZMIENIASZ tytuł karty i opis widoczny w Google -->
+     <title>SWEETO — Lody, Gofry i Słodkie Atrakcje na Imprezy | Rybnik i Śląsk</title>
+     <meta name="description"
+          content="SWEETO zapewnia lody tajskie, świderki, gofry, granitę, popcorn i watę cukrową na wesela, festyny, imprezy firmowe i wydarzenia na Śląsku. Sprawdź dostępność terminu.">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
+
 <body>
-<!-- =====================================================================
+     <!-- =====================================================================
  SWEETO — instrukcja edycji (wszystko w tym pliku to zwykły tekst)
  - Teksty zmieniasz bezpośrednio między znacznikami, np. <h2>TEN TEKST</h2>
  - Szukaj w pliku skrótem Ctrl+F (np. wpisz: 663591930 lub DO UZUPEŁNIENIA)
@@ -29,157 +32,265 @@
  - Zdjęcia wrzuć do folderu photo/ i podmień wg wskazówek przy każdej sekcji
 ===================================================================== -->
 
-<!-- MENU — nazwy linków w menu zmieniasz tutaj; adresy (#oferta itd.) odpowiadają id sekcji poniżej -->
-<header>
-<div class="wrap bar">
-<a class="logo" href="#top" aria-label="SWEETO — strona główna">SWEE<i>T</i>O</a>
-<button id="burger" aria-label="Otwórz menu" aria-expanded="false"><span></span><span></span><span></span></button>
-<!-- TUTAJ ZMIENIASZ pozycje menu (tekst i adres #sekcji) -->
-<nav id="nav" aria-label="Menu główne">
-<a href="#oferta">Oferta</a><a href="#o-nas">O nas</a><a href="#realizacje">Realizacje</a><a href="#jak">Jak to działa</a><a href="#kontakt">Kontakt</a>
-<a class="btn" href="#kontakt">SPRAWDŹ DOSTĘPNOŚĆ TERMINU</a>
-</nav>
-</div>
-</header>
+     <!-- MENU — nazwy linków w menu zmieniasz tutaj; adresy (#oferta itd.) odpowiadają id sekcji poniżej -->
+     <header>
+          <div class="wrap bar">
+               <a class="logo" href="#top" aria-label="SWEETO — strona główna">SWEE<i>T</i>O</a>
+               <button id="burger" aria-label="Otwórz menu"
+                    aria-expanded="false"><span></span><span></span><span></span></button>
+               <!-- TUTAJ ZMIENIASZ pozycje menu (tekst i adres #sekcji) -->
+               <nav id="nav" aria-label="Menu główne">
+                    <a href="#oferta">Oferta</a><a href="#o-nas">O nas</a><a href="#realizacje">Realizacje</a><a
+                         href="#jak">Jak to działa</a><a href="#kontakt">Kontakt</a>
+                    <a class="btn" href="#kontakt">SPRAWDŹ DOSTĘPNOŚĆ TERMINU</a>
+               </nav>
+          </div>
+     </header>
 
-<main id="top">
-<!-- SEKCJA HERO (góra strony). ZDJĘCIE: zamień cały blok <div class="hero-art"> ... </div> na:
+     <main id="top">
+          <!-- SEKCJA HERO (góra strony). ZDJĘCIE: zamień cały blok <div class="hero-art"> ... </div> na:
      <div class="hero-art" role="img" aria-label="Miejsce na zdjęcie stanowiska gastronomicznego SWEETO">
 <span class="dot" style="width:70px;height:70px;background:var(--sun);top:9%;right:12%"></span>
 <span class="dot" style="width:36px;height:36px;background:var(--mint);top:30%;left:12%"></span>
 <span class="dot" style="width:24px;height:24px;background:var(--pink);bottom:26%;right:14%"></span>
 <svg viewBox="0 0 120 200" aria-hidden="true"><path d="M30 92h60L60 190z" fill="#FFC83D"/><path d="M42 92l18 78M60 92v98M78 92l-18 98M36 116h48M46 146h28" stroke="#e5a91c" stroke-width="3" fill="none"/><circle cx="60" cy="72" r="34" fill="#FF4F81"/><circle cx="60" cy="40" r="26" fill="#63D5C5"/><circle cx="66" cy="16" r="9" fill="#FFC83D"/></svg>
 </div> -->
-<section class="hero">
-<div class="wrap">
-<div>
-<!-- TUTAJ ZMIENIASZ główny nagłówek i teksty w hero -->
-<h1>Spraw, by Twój dzień był bardziej <em>SWEETO</em></h1>
-<p class="sub">Lody tajskie, świderki, gofry, granita, popcorn i wata cukrowa na weselach, festynach, imprezach firmowych i wydarzeniach na Śląsku.</p>
-<p class="sup">Przyjeżdżamy na wydarzenia w Rybniku i na terenie Śląska, serwując słodkie i orzeźwiające atrakcje, które dodają imprezie wyjątkowego klimatu.</p>
-<div class="ctas"><a class="btn" href="#kontakt">SPRAWDŹ DOSTĘPNOŚĆ TERMINU</a><a class="btn ghost" href="#oferta">ZOBACZ OFERTĘ</a></div>
-</div>
-<!-- ZDJĘCIE HERO: usuń wszystko w środku tego bloku (kropki, svg, tag) i wpisz:
+          <section class="hero">
+               <div class="wrap">
+                    <div>
+                         <!-- TUTAJ ZMIENIASZ główny nagłówek i teksty w hero -->
+                         <h1>Spraw, by Twój dzień był bardziej <em>SWEETO</em></h1>
+                         <p class="sub">Lody tajskie, świderki, gofry, granita, popcorn i wata cukrowa na weselach,
+                              festynach, imprezach firmowych i wydarzeniach na Śląsku.</p>
+                         <p class="sup">Przyjeżdżamy na wydarzenia w Rybniku i na terenie Śląska, serwując słodkie i
+                              orzeźwiające atrakcje, które dodają imprezie wyjątkowego klimatu.</p>
+                         <div class="ctas"><a class="btn" href="#kontakt">SPRAWDŹ DOSTĘPNOŚĆ TERMINU</a><a
+                                   class="btn ghost" href="#oferta">ZOBACZ OFERTĘ</a></div>
+                    </div>
+                    <!-- ZDJĘCIE HERO: usuń wszystko w środku tego bloku (kropki, svg, tag) i wpisz:
      <img src="photo/stanowisko.jpg" alt="Stanowisko SWEETO z lodami tajskimi na evencie"> -->
-<div class="hero-art"><img src="photo/hero.jpg" alt="Stoisko SWEETO z lodami tajskimi pod parasolem na wydarzeniu"></div>
-</div>
-</section>
+                    <div class="hero-art"><img src="photo/hero.jpg"
+                              alt="Stoisko SWEETO z lodami tajskimi pod parasolem na wydarzeniu"></div>
+               </div>
+          </section>
 
-<!-- OFERTA — każdy produkt to jeden blok <article class="item">. Kopiuj/usuwaj bloki, aby dodać lub usunąć produkt. Ceny: dopisz w <p> jeśli chcesz. -->
-<section class="offer" id="oferta">
-<div class="wrap">
-<!-- TUTAJ ZMIENIASZ ofertę (emoji w <span class="sw"> to ikona karty - możesz je zmienić): każda pozycja to jeden blok <article class="item"> (skopiuj go, aby dodać nową) -->
-<h2>Co możemy przygotować na Twoje wydarzenie?</h2>
-<p class="lead">Wybierz słodkie i orzeźwiające atrakcje dopasowane do charakteru Twojej imprezy.</p>
-<div class="list">
-<article class="item"><span class="sw" aria-hidden="true">🍨</span><h3>Lody tajskie</h3><p>Świeżo przygotowywane na oczach gości, efektowne i idealne jako atrakcja podczas wydarzenia.<b>Goście nie tylko dostają deser — mogą obserwować jego przygotowanie.</b></p><a class="btn ghost" href="#kontakt" data-pick="Lody tajskie">ZAPYTAJ O LODY</a></article>
-<article class="item"><span class="sw" aria-hidden="true">🍦</span><h3>Lody włoskie / świderki</h3><p>Klasyczny deser, który sprawdza się zarówno podczas imprez rodzinnych, jak i większych wydarzeń plenerowych.<b>Prosty, lubiany przez dzieci i dorosłych deser na ciepłe dni.</b></p><a class="btn ghost" href="#kontakt" data-pick="Lody włoskie / świderki">ZAPYTAJ O LODY</a></article>
-<article class="item"><span class="sw" aria-hidden="true">🧇</span><h3>Gofry</h3><p>Ciepłe gofry z dodatkami jako słodka propozycja dla uczestników wydarzenia.<b>Ciepły deser, który świetnie pasuje do rodzinnych i plenerowych imprez.</b></p><a class="btn ghost" href="#kontakt" data-pick="Gofry">ZAPYTAJ O GOFRY</a></article>
-<article class="item"><span class="sw" aria-hidden="true">🍧</span><h3>Granita</h3><p>Orzeźwiająca propozycja szczególnie na wydarzenia organizowane w cieplejsze dni.<b>Lekki i chłodzący poczęstunek, który dobrze sprawdza się podczas letnich wydarzeń.</b></p><a class="btn ghost" href="#kontakt" data-pick="Granita">ZAPYTAJ O GRANITĘ</a></article>
-<article class="item"><span class="sw" aria-hidden="true">🍿</span><h3>Popcorn</h3><p>Klasyczna przekąska idealna na festyny, pikniki, imprezy rodzinne i wydarzenia plenerowe.<b>Prosta przekąska, która pasuje do atmosfery wspólnej zabawy.</b></p><a class="btn ghost" href="#kontakt" data-pick="Popcorn">ZAPYTAJ O POPCORN</a></article>
-<article class="item"><span class="sw" aria-hidden="true">🍭</span><h3>Wata cukrowa</h3><p>Kolorowa i efektowna atrakcja, która szczególnie przyciąga najmłodszych uczestników wydarzeń.<b>Kolorowy element imprezy, który dobrze prezentuje się również na zdjęciach.</b></p><a class="btn ghost" href="#kontakt" data-pick="Wata cukrowa">ZAPYTAJ O WATĘ</a></article>
-</div>
-</div>
-</section>
+          <!-- OFERTA — każdy produkt to jeden blok <article class="item">. Kopiuj/usuwaj bloki, aby dodać lub usunąć produkt. Ceny: dopisz w <p> jeśli chcesz. -->
+          <section class="offer" id="oferta">
+               <div class="wrap">
+                    <!-- TUTAJ ZMIENIASZ ofertę (emoji w <span class="sw"> to ikona karty - możesz je zmienić): każda pozycja to jeden blok <article class="item"> (skopiuj go, aby dodać nową) -->
+                    <h2>Co możemy przygotować na Twoje wydarzenie?</h2>
+                    <p class="lead">Wybierz słodkie i orzeźwiające atrakcje dopasowane do charakteru Twojej imprezy.</p>
+                    <div class="list">
+                         <article class="item"><span class="sw" aria-hidden="true">🍨</span>
+                              <h3>Lody tajskie</h3>
+                              <p>Świeżo przygotowywane na oczach gości, efektowne i idealne jako atrakcja podczas
+                                   wydarzenia.<b>Goście nie tylko dostają deser — mogą obserwować jego
+                                        przygotowanie.</b></p><a class="btn ghost" href="#kontakt"
+                                   data-pick="Lody tajskie">ZAPYTAJ O LODY</a>
+                         </article>
+                         <article class="item"><span class="sw" aria-hidden="true">🍦</span>
+                              <h3>Lody włoskie / świderki</h3>
+                              <p>Klasyczny deser, który sprawdza się zarówno podczas imprez rodzinnych, jak i większych
+                                   wydarzeń plenerowych.<b>Prosty, lubiany przez dzieci i dorosłych deser na ciepłe
+                                        dni.</b></p><a class="btn ghost" href="#kontakt"
+                                   data-pick="Lody włoskie / świderki">ZAPYTAJ O LODY</a>
+                         </article>
+                         <article class="item"><span class="sw" aria-hidden="true">🧇</span>
+                              <h3>Gofry</h3>
+                              <p>Ciepłe gofry z dodatkami jako słodka propozycja dla uczestników wydarzenia.<b>Ciepły
+                                        deser, który świetnie pasuje do rodzinnych i plenerowych imprez.</b></p><a
+                                   class="btn ghost" href="#kontakt" data-pick="Gofry">ZAPYTAJ O GOFRY</a>
+                         </article>
+                         <article class="item"><span class="sw" aria-hidden="true">🍧</span>
+                              <h3>Granita</h3>
+                              <p>Orzeźwiająca propozycja szczególnie na wydarzenia organizowane w cieplejsze
+                                   dni.<b>Lekki i chłodzący poczęstunek, który dobrze sprawdza się podczas letnich
+                                        wydarzeń.</b></p><a class="btn ghost" href="#kontakt"
+                                   data-pick="Granita">ZAPYTAJ O GRANITĘ</a>
+                         </article>
+                         <article class="item"><span class="sw" aria-hidden="true">🍿</span>
+                              <h3>Popcorn</h3>
+                              <p>Klasyczna przekąska idealna na festyny, pikniki, imprezy rodzinne i wydarzenia
+                                   plenerowe.<b>Prosta przekąska, która pasuje do atmosfery wspólnej zabawy.</b></p><a
+                                   class="btn ghost" href="#kontakt" data-pick="Popcorn">ZAPYTAJ O POPCORN</a>
+                         </article>
+                         <article class="item"><span class="sw" aria-hidden="true">🍭</span>
+                              <h3>Wata cukrowa</h3>
+                              <p>Kolorowa i efektowna atrakcja, która szczególnie przyciąga najmłodszych uczestników
+                                   wydarzeń.<b>Kolorowy element imprezy, który dobrze prezentuje się również na
+                                        zdjęciach.</b></p><a class="btn ghost" href="#kontakt"
+                                   data-pick="Wata cukrowa">ZAPYTAJ O WATĘ</a>
+                         </article>
+                    </div>
+               </div>
+          </section>
 
-<!-- O NAS -->
-<section class="about" id="o-nas">
-<div class="wrap">
-<div class="ph"><img src="photo/o-nas.jpg" alt="Przyczepa z lodami i stoisko Lody tajskie w parku" loading="lazy"></div>
-<div>
-<h2>Poznaj SWEETO</h2>
-<p>Jesteśmy rodzinną ekipą, która od lat tworzy klimat na wydarzeniach. Nie tylko serwujemy desery — tworzymy momenty, które zostają w pamięci.</p>
-<p>Na wydarzenie przywozimy gastronomiczne atrakcje, które można dopasować do charakteru imprezy — od kameralnego przyjęcia po większy festyn czy wydarzenie firmowe.</p>
-<p>Działamy w Rybniku i na terenie Śląska. Chcesz sprawdzić, czy możemy pojawić się na Twoim wydarzeniu? Napisz lub zadzwoń.</p>
-<p class="call"><a href="tel:663591930">663 591 930</a></p>
-</div>
-</div>
-</section>
+          <!-- O NAS -->
+          <section class="about" id="o-nas">
+               <div class="wrap">
+                    <div class="ph"><img src="photo/o-nas.jpg" alt="Przyczepa z lodami i stoisko Lody tajskie w parku"
+                              loading="lazy"></div>
+                    <div>
+                         <h2>Poznaj SWEETO</h2>
+                         <p>Jesteśmy rodzinną ekipą, która od lat tworzy klimat na wydarzeniach. Nie tylko serwujemy
+                              desery — tworzymy momenty, które zostają w pamięci.</p>
+                         <p>Na wydarzenie przywozimy gastronomiczne atrakcje, które można dopasować do charakteru
+                              imprezy — od kameralnego przyjęcia po większy festyn czy wydarzenie firmowe.</p>
+                         <p>Działamy w Rybniku i na terenie Śląska. Chcesz sprawdzić, czy możemy pojawić się na Twoim
+                              wydarzeniu? Napisz lub zadzwoń.</p>
+                         <p class="call"><a href="tel:663591930">663 591 930</a></p>
+                    </div>
+               </div>
+          </section>
 
-<!-- GALERIA — w każdym <div class="ph"> zamień tekst [DO UZUPEŁNIENIA — ZDJĘCIE X] na <img src="photo/zdjecie1.jpg" alt="opis zdjęcia"> -->
-<section id="realizacje">
-<div class="wrap">
-<h2>SWEETO w akcji</h2>
-<p class="lead">Zobacz nasze stanowiska, produkty i atmosferę wydarzeń.</p>
-<!-- GALERIA: zamień każdy <div class="ph">[DO UZUPEŁNIENIA…]</div> na
+          <!-- GALERIA — w każdym <div class="ph"> zamień tekst [DO UZUPEŁNIENIA — ZDJĘCIE X] na <img src="photo/zdjecie1.jpg" alt="opis zdjęcia"> -->
+          <section id="realizacje">
+               <div class="wrap">
+                    <h2>SWEETO w akcji</h2>
+                    <p class="lead">Zobacz nasze stanowiska, produkty i atmosferę wydarzeń.</p>
+                    <!-- GALERIA: zamień każdy <div class="ph">[DO UZUPEŁNIENIA…]</div> na
      <div class="ph"><img src="photo/galeria1.jpg" alt="Opis zdjęcia"></div> -->
-<div class="gal">
-<div class="row"><div class="ph" style="--r:0.486"><img src="photo/galeria1.jpg" alt="Lody tajskie z malinami, miętą i wafelkiem w kubku" loading="lazy"></div><div class="ph" style="--r:1.333"><img src="photo/galeria2.jpg" alt="Wnętrze przyczepy SWEETO z maszyną do granity i ladą" loading="lazy"></div><div class="ph" style="--r:0.486"><img src="photo/galeria4.jpg" alt="Stoisko SWEETO z lodami tajskimi pod parasolem" loading="lazy"></div></div>
-<div class="row"><div class="ph" style="--r:0.750"><img src="photo/galeria3.jpg" alt="Stoisko SWEETO z lodami tajskimi pod parasolem na wydarzeniu" loading="lazy"></div><div class="ph" style="--r:0.750"><img src="photo/galeria5.jpg" alt="Granita i lada w przyczepie SWEETO" loading="lazy"></div><div class="ph" style="--r:0.750"><img src="photo/galeria6.jpg" alt="Przyczepa SWEETO z lodami włoskimi i gofrownicą" loading="lazy"></div></div>
-</div>
-</div>
-</section>
+                    <div class="gal">
+                         <div class="row">
+                              <div class="ph" style="--r:0.486"><img src="photo/galeria1.jpg"
+                                        alt="Lody tajskie z malinami, miętą i wafelkiem w kubku" loading="lazy"></div>
+                              <div class="ph" style="--r:1.333"><img src="photo/galeria2.jpg"
+                                        alt="Wnętrze przyczepy SWEETO z maszyną do granity i ladą" loading="lazy"></div>
+                              <div class="ph" style="--r:0.486"><img src="photo/galeria4.jpg"
+                                        alt="Stoisko SWEETO z lodami tajskimi pod parasolem" loading="lazy"></div>
+                         </div>
+                         <div class="row">
+                              <div class="ph" style="--r:0.750"><img src="photo/galeria3.jpg"
+                                        alt="Stoisko SWEETO z lodami tajskimi pod parasolem na wydarzeniu"
+                                        loading="lazy"></div>
+                              <div class="ph" style="--r:0.750"><img src="photo/galeria5.jpg"
+                                        alt="Granita i lada w przyczepie SWEETO" loading="lazy"></div>
+                              <div class="ph" style="--r:0.750"><img src="photo/galeria6.jpg"
+                                        alt="Przyczepa SWEETO z lodami włoskimi i gofrownicą" loading="lazy"></div>
+                         </div>
+                    </div>
+               </div>
+          </section>
 
-<!-- JAK TO DZIAŁA — cztery kroki współpracy. UPEWNIJ SIĘ, że zgadzają się z tym, jak naprawdę pracujecie. Kroki możesz zmieniać, dodawać (kopiuj <li>) lub usuwać. -->
-<section id="jak">
-<div class="wrap">
-<h2>Jak to działa?</h2>
-<p class="lead">Cztery proste kroki od pytania do słodkiego stanowiska na Twoim wydarzeniu.</p>
-<ol class="steps">
-<li><span class="num">1</span><h3>Napisz lub zadzwoń</h3><p>Podaj datę, miejsce i rodzaj wydarzenia oraz to, czego potrzebujesz.</p></li>
-<li><span class="num">2</span><h3>Sprawdzamy termin</h3><p>Potwierdzamy dostępność i wracamy z informacjami o możliwościach obsługi.</p></li>
-<li><span class="num">3</span><h3>Dobieramy atrakcje</h3><p>Ustalamy razem, co serwujemy, żeby oferta pasowała do charakteru imprezy.</p></li>
-<li><span class="num">4</span><h3>Przyjeżdżamy i serwujemy</h3><p>Zajmujemy się przygotowaniem i serwowaniem na miejscu, a Ty zajmujesz się gośćmi.</p></li>
-</ol>
-</div>
-</section>
+          <!-- JAK TO DZIAŁA — cztery kroki współpracy. UPEWNIJ SIĘ, że zgadzają się z tym, jak naprawdę pracujecie. Kroki możesz zmieniać, dodawać (kopiuj <li>) lub usuwać. -->
+          <section id="jak">
+               <div class="wrap">
+                    <h2>Jak to działa?</h2>
+                    <p class="lead">Cztery proste kroki od pytania do słodkiego stanowiska na Twoim wydarzeniu.</p>
+                    <ol class="steps">
+                         <li><span class="num">1</span>
+                              <h3>Napisz lub zadzwoń</h3>
+                              <p>Podaj datę, miejsce i rodzaj wydarzenia oraz to, czego potrzebujesz.</p>
+                         </li>
+                         <li><span class="num">2</span>
+                              <h3>Sprawdzamy termin</h3>
+                              <p>Potwierdzamy dostępność i wracamy z informacjami o możliwościach obsługi.</p>
+                         </li>
+                         <li><span class="num">3</span>
+                              <h3>Dobieramy atrakcje</h3>
+                              <p>Ustalamy razem, co serwujemy, żeby oferta pasowała do charakteru imprezy.</p>
+                         </li>
+                         <li><span class="num">4</span>
+                              <h3>Przyjeżdżamy i serwujemy</h3>
+                              <p>Zajmujemy się przygotowaniem i serwowaniem na miejscu, a Ty zajmujesz się gośćmi.</p>
+                         </li>
+                    </ol>
+               </div>
+          </section>
 
-<!-- SEKCJA CTA (różowy blok z przyciskiem) -->
-<section class="cta">
-<div class="wrap"><div class="box">
-<span class="blob" aria-hidden="true"></span>
-<h2>Planujesz wydarzenie? Zróbmy je bardziej SWEETO.</h2>
-<p>Napisz, kiedy i gdzie odbywa się Twoje wydarzenie oraz czego potrzebujesz. Sprawdzimy dostępność terminu i wrócimy z informacjami dotyczącymi możliwości obsługi.</p>
-<a class="btn" href="#kontakt">SPRAWDŹ DOSTĘPNOŚĆ TERMINU</a>
-</div></div>
-</section>
+          <!-- SEKCJA CTA (różowy blok z przyciskiem) -->
+          <section class="cta">
+               <div class="wrap">
+                    <div class="box">
+                         <span class="blob" aria-hidden="true"></span>
+                         <h2>Planujesz wydarzenie? Zróbmy je bardziej SWEETO.</h2>
+                         <p>Napisz, kiedy i gdzie odbywa się Twoje wydarzenie oraz czego potrzebujesz. Sprawdzimy
+                              dostępność terminu i wrócimy z informacjami dotyczącymi możliwości obsługi.</p>
+                         <a class="btn" href="#kontakt">SPRAWDŹ DOSTĘPNOŚĆ TERMINU</a>
+                    </div>
+               </div>
+          </section>
 
-<!-- FORMULARZ / KONTAKT — telefon i e-mail zmieniasz też w stopce i sekcji O NAS (Ctrl+F: 663591930 oraz barkra1977@gmail.com). Wysyłka formularza: patrz INSTRUKCJA.txt -->
-<section id="kontakt">
-<div class="wrap form-grid">
-<div>
-<h2>Kontakt</h2>
-<p class="lead">Podaj podstawowe informacje o wydarzeniu. Wystarczy telefon albo e-mail.</p>
-<!-- TUTAJ ZMIENIASZ TELEFON I E-MAIL (zmień też w stopce i w sekcji "Poznaj SWEETO"; w href pisz numer bez spacji) -->
-<div class="contact-list"><a href="tel:663591930">663 591 930</a><a href="mailto:barkra1977@gmail.com" style="font-size:18px">barkra1977@gmail.com</a><span>Rybnik / Śląsk</span></div>
-</div>
-<form id="f" novalidate>
-<div class="f"><label for="imie">Imię *</label><input id="imie" name="imie" autocomplete="given-name"><span class="err"></span></div>
-<div class="f"><label for="tel">Telefon</label><input id="tel" name="tel" type="tel" autocomplete="tel"><span class="err"></span></div>
-<div class="f full"><label for="mail">Adres e-mail</label><input id="mail" name="mail" type="email" autocomplete="email"><span class="err"></span></div>
-<div class="f">
-    <label for="data">Data wydarzenia *</label>
-    <input id="data" name="data" type="text" inputmode="numeric"
-           placeholder="dd.mm.rrrr" maxlength="10" autocomplete="off">
-    <span class="err"></span>
-</div>
-<div class="f"><label for="miejsce">Miejsce wydarzenia *</label><input id="miejsce" name="miejsce"><span class="err"></span></div>
-<div class="f"><label for="rodzaj">Rodzaj wydarzenia *</label><select id="rodzaj" name="rodzaj"><option value="">Wybierz…</option><option>Wesele</option><option>Festyn / odpust</option><option>Impreza firmowa</option><option>Piknik / impreza plenerowa</option><option>Urodziny / komunia</option><option>Inne</option></select><span class="err"></span></div>
-<div class="f"><label for="goscie">Przewidywana liczba gości</label><input id="goscie" name="goscie" type="number" min="1" inputmode="numeric"></div>
-<fieldset class="f full"><legend style="font-weight:600;font-size:14px">Wybrane atrakcje</legend>
-<div class="chips" id="chips"><label><input type="checkbox" value="Lody tajskie">Lody tajskie</label><label><input type="checkbox" value="Lody włoskie / świderki">Świderki</label><label><input type="checkbox" value="Gofry">Gofry</label><label><input type="checkbox" value="Granita">Granita</label><label><input type="checkbox" value="Popcorn">Popcorn</label><label><input type="checkbox" value="Wata cukrowa">Wata cukrowa</label></div></fieldset>
-<div class="f full"><label for="msg">Wiadomość *</label><textarea id="msg" name="msg" rows="4"></textarea><span class="err"></span></div>
-<div class="f full"><label class="chk"><input type="checkbox" id="zgoda"><span>Wyrażam zgodę na przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie. *</span></label><span class="err"></span></div>
-<div class="f full"><button class="btn" type="submit">WYŚLIJ ZAPYTANIE</button></div>
-<div class="ok" id="ok" role="status">Dziękujemy! Otworzyliśmy Twój program pocztowy z gotową wiadomością — kliknij „Wyślij”, a my sprawdzimy szczegóły i skontaktujemy się z Tobą.</div>
-</form>
-</div>
-</section>
-</main>
+          <!-- FORMULARZ / KONTAKT — telefon i e-mail zmieniasz też w stopce i sekcji O NAS (Ctrl+F: 663591930 oraz barkra1977@gmail.com). Wysyłka formularza: patrz INSTRUKCJA.txt -->
+          <section id="kontakt">
+               <div class="wrap form-grid">
+                    <div>
+                         <h2>Kontakt</h2>
+                         <p class="lead">Podaj podstawowe informacje o wydarzeniu. Wystarczy telefon albo e-mail.</p>
+                         <!-- TUTAJ ZMIENIASZ TELEFON I E-MAIL (zmień też w stopce i w sekcji "Poznaj SWEETO"; w href pisz numer bez spacji) -->
+                         <div class="contact-list"><a href="tel:663591930">663 591 930</a><a
+                                   href="mailto:barkra1977@gmail.com"
+                                   style="font-size:18px">barkra1977@gmail.com</a><span>Rybnik / Śląsk</span></div>
+                    </div>
+                    <form id="f" novalidate>
+                         <div class="f"><label for="imie">Imię *</label><input id="imie" name="imie"
+                                   autocomplete="given-name"><span class="err"></span></div>
+                         <div class="f"><label for="tel">Telefon</label><input id="tel" name="tel" type="tel"
+                                   autocomplete="tel"><span class="err"></span></div>
+                         <div class="f full"><label for="mail">Adres e-mail</label><input id="mail" name="mail"
+                                   type="email" autocomplete="email"><span class="err"></span></div>
+                         <div class="f">
+                              <label for="data">Data wydarzenia *</label>
+                              <input id="data" name="data" type="text" inputmode="numeric" placeholder="dd.mm.rrrr"
+                                   maxlength="10" autocomplete="off">
+                              <span class="err"></span>
+                         </div>
+                         <div class="f"><label for="miejsce">Miejsce wydarzenia *</label><input id="miejsce"
+                                   name="miejsce"><span class="err"></span></div>
+                         <div class="f"><label for="rodzaj">Rodzaj wydarzenia *</label><select id="rodzaj"
+                                   name="rodzaj">
+                                   <option value="">Wybierz…</option>
+                                   <option>Wesele</option>
+                                   <option>Festyn / odpust</option>
+                                   <option>Impreza firmowa</option>
+                                   <option>Piknik / impreza plenerowa</option>
+                                   <option>Urodziny / komunia</option>
+                                   <option>Inne</option>
+                              </select><span class="err"></span></div>
+                         <div class="f"><label for="goscie">Przewidywana liczba gości</label><input id="goscie"
+                                   name="goscie" type="number" min="1" inputmode="numeric"></div>
+                         <fieldset class="f full">
+                              <legend style="font-weight:600;font-size:14px">Wybrane atrakcje</legend>
+                              <div class="chips" id="chips"><label><input type="checkbox" value="Lody tajskie">Lody
+                                        tajskie</label><label><input type="checkbox"
+                                             value="Lody włoskie / świderki">Świderki</label><label><input
+                                             type="checkbox" value="Gofry">Gofry</label><label><input type="checkbox"
+                                             value="Granita">Granita</label><label><input type="checkbox"
+                                             value="Popcorn">Popcorn</label><label><input type="checkbox"
+                                             value="Wata cukrowa">Wata cukrowa</label></div>
+                         </fieldset>
+                         <div class="f full"><label for="msg">Wiadomość *</label><textarea id="msg" name="msg"
+                                   rows="4"></textarea><span class="err"></span></div>
+                         <div class="f full"><label class="chk"><input type="checkbox" id="zgoda"><span>Wyrażam zgodę na
+                                        przetwarzanie moich danych osobowych w celu odpowiedzi na zapytanie.
+                                        *</span></label><span class="err"></span></div>
+                         <div class="f full"><button class="btn" type="submit">WYŚLIJ ZAPYTANIE</button></div>
+                         <div class="ok" id="ok" role="status">Dziękujemy! Otworzyliśmy Twój program pocztowy z gotową
+                              wiadomością — kliknij „Wyślij”, a my sprawdzimy szczegóły i skontaktujemy się z Tobą.
+                         </div>
+                    </form>
+               </div>
+          </section>
+     </main>
 
-<!-- STOPKA — telefon, e-mail, polityka prywatności -->
-<!-- STOPKA: dane kontaktowe, link do polityki prywatności (#polityka - podmień na adres podstrony) -->
-<footer>
-<div class="wrap">
-<div><a class="logo" href="#top">SWEE<i>T</i>O</a><p style="margin:8px 0 0">Rybnik / Śląsk</p></div>
-<div><a href="tel:663591930">663 591 930</a><br><a href="mailto:barkra1977@gmail.com">barkra1977@gmail.com</a></div>
-<div><a href="#polityka">Polityka prywatności</a><br><span class="note">[DO UZUPEŁNIENIA — treść polityki]</span></div>
-<p class="copy">© <span id="yr">2026</span> SWEETO. Wszelkie prawa zastrzeżone.</p>
-</div>
-</footer>
+     <!-- STOPKA — telefon, e-mail, polityka prywatności -->
+     <!-- STOPKA: dane kontaktowe, link do polityki prywatności (#polityka - podmień na adres podstrony) -->
+     <footer>
+          <div class="wrap">
+               <div><a class="logo" href="#top">SWEE<i>T</i>O</a>
+                    <p style="margin:8px 0 0">Rybnik / Śląsk</p>
+               </div>
+               <div><a href="tel:663591930">663 591 930</a><br><a
+                         href="mailto:barkra1977@gmail.com">barkra1977@gmail.com</a></div>
+               <div><a href="#polityka">Polityka prywatności</a><br><span class="note">[DO UZUPEŁNIENIA — treść
+                         polityki]</span></div>
+               <p class="copy">© <span id="yr">2026</span> SWEETO. Wszelkie prawa zastrzeżone.</p>
+          </div>
+     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pl.js"></script>
-<script src="script.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pl.js"></script>
+     <script src="script.js"></script>
 </body>
+
 </html>
