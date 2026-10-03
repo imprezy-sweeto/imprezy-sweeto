@@ -42,14 +42,14 @@ h2,
 h3,
 .logo {
    color: var(--berry);
-   
+
    font-family: "Baloo 2", Impact, system-ui, sans-serif;
    font-weight: 800;
    line-height: 1.1;
    margin: 0;
    text-transform: uppercase;
    letter-spacing: .01em;
-   
+
 }
 
 a {
@@ -137,9 +137,9 @@ header {
 }
 
 .logo i {
-   font-style: normal; 
+   font-style: normal;
    color: var(--pink);
- 
+
 }
 
 nav {
@@ -754,11 +754,12 @@ fieldset {
 
 .ok {
    display: none;
-   background: var(--sun);
+   background: #20eb2070;
    padding: 24px;
    border-radius: 24px;
    font-weight: 600;
-   grid-column: 1/-1
+   grid-column: 1 / -1;
+   border: 1px solid #36af3638;
 }
 
 .note {
@@ -835,12 +836,12 @@ footer a {
 }
 
 footer .logo {
-    color: var(--berry);
-   
+   color: var(--berry);
+
 }
 
 footer .logo i {
-   
+
    color: var(--pink);
 }
 
