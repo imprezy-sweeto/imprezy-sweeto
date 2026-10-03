@@ -3,7 +3,7 @@
 /* SWEETO — style strony.
    KOLORY zmieniasz w :root poniżej: --orange (nagłówki, przyciski), --pink / --mint / --sun (karty), --bg (tło strony), --ink (tekst). */
 :root {
-   --orange: #E8743B;
+   --babyBlue: #A7D8F0;
    --orange2: #FF7A00;
    --berry: #F0627F;
    --pink: #F9C6CB;
@@ -48,7 +48,8 @@ h3,
    line-height: 1.1;
    margin: 0;
    text-transform: uppercase;
-   letter-spacing: .01em
+   letter-spacing: .01em;
+   
 }
 
 a {
@@ -66,8 +67,9 @@ section {
 }
 
 h2 {
+   text-shadow: -2px 0 #000000, 0 2px #000, 2px 0 #000, 0 -2px #000;
    font-size: clamp(34px, 6vw, 60px);
-   color: var(--orange);
+   color: var(--babyBlue);
    text-align: center;
    margin: 0 auto;
    max-width: 20ch
@@ -86,9 +88,9 @@ h2 {
    text-decoration: none;
    text-underline-offset: 3px;
    border: 0;
-   background: var(--orange);
+   background: var(--babyBlue);
    color: var(--ink);
-   box-shadow: 5px 8px 12px rgba(0, 0, 0, .25);
+   box-shadow: 6px 8px 14px rgb(0 0 0 / 71%);
    transition: transform .2s, box-shadow .2s;
    cursor: pointer;
    font: 600 15px Poppins, sans-serif;
@@ -136,7 +138,7 @@ header {
 
 .logo i {
    font-style: normal; 
-   color: #FFC83D;
+   color: var(--pink);
  
 }
 
@@ -154,7 +156,7 @@ nav a:not(.btn) {
 }
 
 nav a:not(.btn):hover {
-   color: var(--orange)
+   color: var(--babyBlue)
 }
 
 nav .btn {
@@ -175,7 +177,7 @@ nav .btn {
 #burger span {
    display: block;
    height: 4px;
-   background: var(--orange);
+   background: var(--babyBlue);
    margin: 6px 0;
    border-radius: 2px
 }
@@ -230,7 +232,8 @@ nav .btn {
 
 h1 {
    font-size: clamp(42px, 7.5vw, 84px);
-   color: var(--orange)
+   color: var(--babyBlue);
+   text-shadow: -2px 0 #000000, 0 2px #000, 2px 0 #000, 0 -2px #000;
 }
 
 h1 em {
@@ -518,7 +521,7 @@ h1 em {
    width: 54px;
    height: 54px;
    border-radius: 50%;
-   background: var(--orange);
+   background: var(--babyBlue);
    color: #fff;
    font: 800 30px/54px "Baloo 2", sans-serif;
    box-shadow: 3px 5px 8px rgba(0, 0, 0, .22)
@@ -568,7 +571,7 @@ summary::after {
    top: 50%;
    transform: translateY(-50%);
    font-size: 34px;
-   color: var(--orange);
+   color: var(--babyBlue);
    transition: transform .25s
 }
 
@@ -689,7 +692,7 @@ textarea {
 input:focus,
 select:focus,
 textarea:focus {
-   border-color: var(--orange);
+   border-color: var(--babyBlue);
    outline: 0
 }
 
@@ -731,7 +734,7 @@ fieldset {
 
 .chips input {
    width: auto;
-   accent-color: var(--orange)
+   accent-color: var(--babyBlue)
 }
 
 .chk {
@@ -746,7 +749,7 @@ fieldset {
    height: 22px;
    margin-top: 3px;
    flex: none;
-   accent-color: var(--orange)
+   accent-color: var(--babyBlue)
 }
 
 .ok {
@@ -814,7 +817,7 @@ fieldset {
 
 /* stopka */
 footer {
-   background: var(--orange);
+   background: var(--babyBlue);
    padding: 44px 0 36px;
    font-size: 15px
 }
@@ -838,7 +841,7 @@ footer .logo {
 
 footer .logo i {
    
-   color: #FFC83D;
+   color: var(--pink);
 }
 
 footer .copy {
