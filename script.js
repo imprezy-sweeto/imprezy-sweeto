@@ -112,8 +112,101 @@
         var err = wrap.querySelector('.err');
         if (err) err.textContent = msg || '';
     }
+    // Liczba gości: tylko cyfry, zakres 1-300
+    f.goscie.addEventListener('input', function () {
+        var d = this.value.replace(/\D/g, '');
+        if (d === '') { this.value = ''; return; }
 
-    f.addEventListener('submit', function (ev) {
+        var n = Number(d);
+        if (n > 300) n = 300;
+        if (n < 1) n = 1;
+
+        this.value = n;
+    });
+        f.addEventListener('submit', function (ev) {
+        ev.preventDefault();
+
+        var ok = true;
+        function check(el, msg) {
+            showError(el, msg);
+            if (msg) ok = false;
+        }
+        function val(name) { return f[name].value.trim(); }
+
+        var tel = val('tel'), mail = val('mail');
+        var dateRaw = val('data');
+        var date = parsePL(dateRaw); // rrrr-mm-dd, do porównań
+
+        check(f.imie, val('imie') ? '' : 'Podaj imię.');
+
+        if (!tel && !mail) {
+            check(f.tel, 'Podaj numer telefonu lub adres e-mail.');
+            check(f.mail, '');
+        } else {
+            check(f.tel, tel && !/^[+\d][\d\s-]{6,}$/.test(tel) ? 'Podaj poprawny numer telefonu.' : '');
+            check(f.mail, mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail) ? 'Podaj poprawny adres e-mail.' : '');
+        }
+
+        if (!dateRaw) check(f.data, 'Wybierz datę wydarzenia.');
+        else if (!date) check(f.data, 'Podaj poprawną datę w formacie dd.mm.rrrr.');
+        else if (date < minDate || date > maxDate) check(f.data, 'Podaj datę od dziś do końca ' + yearsLimit + ' roku.');
+        else check(f.data, '');
+
+        check(f.miejsce, val('miejsce') ? '' : 'Podaj miejsce wydarzenia.');
+        check(f.rodzaj, val('rodzaj') ? '' : 'Wybierz rodzaj wydarzenia.');
+        check(f.msg, val('msg') ? '' : 'Napisz krótką wiadomość.');
+        check($('zgoda'), $('zgoda').checked ? '' : 'Zaznacz zgodę, aby wysłać zapytanie.');
+
+        if (!ok) {
+            var first = f.querySelector('.invalid input, .invalid select, .invalid textarea');
+            if (first) first.focus();
+            return;
+        }
+
+        var datePL = date.split('-').reverse().join('.');
+        var atrakcje = [].map.call(document.querySelectorAll('#chips input:checked'), function (c) {
+            return c.value;
+        }).join(', ');
+
+        var subject = 'Zapytanie o termin — ' + val('rodzaj') + ', ' + datePL;
+        var btn = f.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; }
+
+        fetch('https://emailcontact.imprezysweeto.workers.dev', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                _subject: subject,
+                imie: val('imie'),
+                telefon: tel,
+                email: mail,
+                data: datePL,
+                miejsce: val('miejsce'),
+                rodzaj: val('rodzaj'),
+                goscie: val('goscie'),
+                atrakcje: atrakcje,
+                wiadomosc: val('msg'),
+                website: f.website ? f.website.value : ''
+            })
+        })
+        .then(function (res) {
+            if (!res.ok) throw new Error('blad');
+            f.reset();
+            fp.clear();
+            $('ok').style.display = 'block';
+            $('ok').scrollIntoView({ block: 'center' });
+        })
+        .catch(function () {
+            alert('Nie udało się wysłać zapytania. Spróbuj ponownie lub napisz na imprezysweeto@gmail.com.');
+        })
+        .finally(function () {
+            if (btn) { btn.disabled = false; }
+        });
+    });
+
+})();
+
+/**    f.addEventListener('submit', function (ev) {
         ev.preventDefault();
 
         var ok = true;
@@ -170,12 +263,11 @@
             '\n\nWiadomość:\n' + val('msg');
 
         var subject = 'Zapytanie o termin — ' + val('rodzaj') + ', ' + datePL;
-        window.location.href = 'mailto:barkra1977@gmail.com?subject=' + encodeURIComponent(subject) +
+        window.location.href = 'mailto:imprezysweeto@gmail.com?subject=' + encodeURIComponent(subject) +
             '&body=' + encodeURIComponent(body);
 
         f.reset();
         fp.clear();
         $('ok').style.display = 'block';
         $('ok').scrollIntoView({ block: 'center' });
-    });
-})();
+    }); */
