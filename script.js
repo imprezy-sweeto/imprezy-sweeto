@@ -123,7 +123,7 @@
 
         this.value = n;
     });
-        f.addEventListener('submit', function (ev) {
+    f.addEventListener('submit', function (ev) {
         ev.preventDefault();
 
         var ok = true;
@@ -170,7 +170,11 @@
 
         var subject = 'Zapytanie o termin — ' + val('rodzaj') + ', ' + datePL;
         var btn = f.querySelector('button[type="submit"]');
-        if (btn) { btn.disabled = true; }
+        var btnText = btn ? btn.textContent : '';
+        if (btn) {
+            btn.disabled = true;
+            btn.textContent = 'Wysyłanie...';
+        }
 
         fetch('https://emailcontact.imprezysweeto.workers.dev', {
             method: 'POST',
@@ -189,24 +193,27 @@
                 website: f.website ? f.website.value : ''
             })
         })
-        .then(function (res) {
-            if (!res.ok) {
-                return res.text().then(function (t) {
-                    throw new Error(res.status + ': ' + t);
-                });
-            }
-            f.reset();
-            fp.clear();
-            $('ok').style.display = 'block';
-            $('ok').scrollIntoView({ block: 'center' });
-        })
-        .catch(function (err) {
-            console.error(err);
-            alert('Błąd: ' + err.message);
-        })
-        .finally(function () {
-            if (btn) { btn.disabled = false; }
-        });
+            .then(function (res) {
+                if (!res.ok) {
+                    return res.text().then(function (t) {
+                        throw new Error(res.status + ': ' + t);
+                    });
+                }
+                f.reset();
+                fp.clear();
+                $('ok').style.display = 'block';
+                $('ok').scrollIntoView({ block: 'center' });
+            })
+            .catch(function (err) {
+                console.error(err);
+                alert('Błąd: ' + err.message);
+            })
+            .finally(function () {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.textContent = btnText;
+                }
+            });
     });
 
 })();
