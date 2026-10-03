@@ -174,6 +174,7 @@
         if (btn) {
             btn.disabled = true;
             btn.textContent = 'Wysyłanie...';
+            btn.style.background = '#a7d8f0c4';
         }
 
         fetch('https://emailcontact.imprezysweeto.workers.dev', {
@@ -212,6 +213,7 @@
                 if (btn) {
                     btn.disabled = false;
                     btn.textContent = btnText;
+                    btn.style.background = '#A7D8F0';
                 }
             });
     });
