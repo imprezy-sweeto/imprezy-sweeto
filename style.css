@@ -42,7 +42,6 @@ h2,
 h3,
 .logo {
    color: var(--berry);
-
    font-family: "Baloo 2", Impact, system-ui, sans-serif;
    font-weight: 800;
    line-height: 1.1;
@@ -130,7 +129,7 @@ header {
 }
 
 .logo {
-   font-size: 34px;
+   font-size: 45px;
    text-decoration: none;
    color: var(--berry);
    text-shadow: -2px 0 #000000, 0 2px #000, 2px 0 #000, 0 -2px #000;
@@ -638,18 +637,27 @@ details p {
 }
 
 .contact-list {
-   margin-top: 28px;
-   display: grid;
-   gap: 8px;
-   font-weight: 600
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    gap: 8px;
+    margin-top: 5%;
+}
+
+.contact-list .label {
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 5px;
 }
 
 .contact-list a {
-   font-size: 24px;
-   text-decoration: none;
-   font-family: "Baloo 2", sans-serif;
-   font-weight: 800;
-   color: var(--orange2)
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.contact-list .location {
+    font-size: 16px;
+    margin-top: 5px;
 }
 
 form {
