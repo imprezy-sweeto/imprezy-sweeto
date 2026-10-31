@@ -140,40 +140,82 @@
                               imprezy — od kameralnego przyjęcia po większy festyn czy wydarzenie firmowe.</p>
                          <p>Działamy w Rybniku i na terenie Śląska. Chcesz sprawdzić, czy możemy pojawić się na Twoim
                               wydarzeniu? Napisz lub zadzwoń.</p>
-                         <p class="call"><a href="tel:663591930">663 591 930</a></p>
+                         <p class="call"><a href="tel:663591930">+48 663 591 930</a></p>
+                         <p class="call"><a href="tel:663591930">+48 530 414 590</a></p>
                     </div>
                </div>
           </section>
 
           <!-- GALERIA — w każdym <div class="ph"> zamień tekst [DO UZUPEŁNIENIA — ZDJĘCIE X] na <img src="photo/zdjecie1.jpg" alt="opis zdjęcia"> -->
-          <section id="realizacje">
-               <div class="wrap">
-                    <h2>SWEETO w akcji</h2>
-                    <p class="lead">Zobacz nasze stanowiska, produkty i atmosferę wydarzeń.</p>
-                    <!-- GALERIA: zamień każdy <div class="ph">[DO UZUPEŁNIENIA…]</div> na
-     <div class="ph"><img src="photo/galeria1.jpg" alt="Opis zdjęcia"></div> -->
-                    <div class="gal">
-                         <div class="row">
-                              <div class="ph" style="--r:0.486"><img src="photo/galeria1.jpg"
-                                        alt="Lody tajskie z malinami, miętą i wafelkiem w kubku" loading="lazy"></div>
-                              <div class="ph" style="--r:1.333"><img src="photo/galeria2.jpg"
-                                        alt="Wnętrze przyczepy SWEETO z maszyną do granity i ladą" loading="lazy"></div>
-                              <div class="ph" style="--r:0.486"><img src="photo/galeria4.jpg"
-                                        alt="Stoisko SWEETO z lodami tajskimi pod parasolem" loading="lazy"></div>
-                         </div>
-                         <div class="row">
-                              <div class="ph" style="--r:0.750"><img src="photo/galeria3.jpg"
-                                        alt="Stoisko SWEETO z lodami tajskimi pod parasolem na wydarzeniu"
-                                        loading="lazy"></div>
-                              <div class="ph" style="--r:0.750"><img src="photo/galeria5.jpg"
-                                        alt="Granita i lada w przyczepie SWEETO" loading="lazy"></div>
-                              <div class="ph" style="--r:0.750"><img src="photo/galeria6.jpg"
-                                        alt="Przyczepa SWEETO z lodami włoskimi i gofrownicą" loading="lazy"></div>
-                         </div>
-                    </div>
-               </div>
-          </section>
+<section id="realizacje">
+  <div class="wrap">
+    <h1 style="text-align: center; font-size: clamp(34px, 6vw, 60px);"><em>SWEE<span style="color: #F9C6CB;">T</span>O</em> W AKCJI</h1>
+    <p class="lead">Zobacz nasze stanowiska, produkty i atmosferę wydarzeń.</p>
 
+    <div class="gallery">
+      <div class="g-top">
+        <button type="button" class="g-item g-big">
+          <img src="photo/galeria2.jpg" alt="" loading="lazy">
+        </button>
+        <button type="button" class="g-item g-s1">
+          <img src="photo/galeria1.jpg" alt="" loading="lazy">
+        </button>
+        <button type="button" class="g-item g-s2">
+          <img src="photo/galeria4.jpg" alt="" loading="lazy">
+        </button>
+      </div>
+
+      <div class="g-bottom">
+        <button type="button" class="g-item">
+          <img src="photo/galeria8.jpg" alt="" loading="lazy">
+        </button>
+        <button type="button" class="g-item">
+          <img src="photo/galeria5.jpg" alt="" loading="lazy">
+        </button>
+        <button type="button" class="g-item">
+          <img src="photo/galeria6.jpg" alt="" loading="lazy">
+        </button>
+        <button type="button" class="g-item">
+          <img src="photo/galeria7.jpg" alt="" loading="lazy">
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lb" id="lb" hidden aria-modal="true" role="dialog">
+  <button type="button" class="lb-close" aria-label="Zamknij">&times;</button>
+  <button type="button" class="lb-nav lb-prev" aria-label="Poprzednie zdjęcie">&#10094;</button>
+  <img class="lb-img" id="lbImg" src="" alt="">
+  <button type="button" class="lb-nav lb-next" aria-label="Następne zdjęcie">&#10095;</button>
+  <div class="lb-count" id="lbCount"></div>
+</div>
+<section id="filmy">
+  <div class="wrap">
+   <h1 style="text-align: center; font-size: clamp(34px, 6vw, 60px);"><em>SWEE<span style="color: #F9C6CB;">T</span>O</em> W RUCHU</h1>
+    <p class="lead">Krótkie filmy z naszych stanowisk i wydarzeń.</p>
+
+    <div class="sw-vids">
+      <div class="sw-vid" data-src="video/film1.mp4" role="button" tabindex="0" aria-label="Odtwórz film 1">
+        <video src="video/film1.mp4#t=0.1" preload="metadata" muted playsinline></video>
+        <span class="sw-play"></span>
+      </div>
+      <div class="sw-vid" data-src="video/film2.mp4" role="button" tabindex="0" aria-label="Odtwórz film 2">
+        <video src="video/film2.mp4#t=0.1" preload="metadata" muted playsinline></video>
+        <span class="sw-play"></span>
+      </div>
+      <div class="sw-vid" data-src="video/film3.mp4" role="button" tabindex="0" aria-label="Odtwórz film 3">
+        <video src="video/film3.mp4#t=0.1" preload="metadata" muted playsinline></video>
+        <span class="sw-play"></span>
+      </div>
+      <div class="sw-vid" data-src="video/film4.mp4" role="button" tabindex="0" aria-label="Odtwórz film 4">
+        <video src="video/film4.mp4#t=0.1" preload="metadata" muted playsinline></video>
+        <span class="sw-play"></span>
+      </div>
+    </div>
+  </div>
+</section>
           <!-- JAK TO DZIAŁA — cztery kroki współpracy. UPEWNIJ SIĘ, że zgadzają się z tym, jak naprawdę pracujecie. Kroki możesz zmieniać, dodawać (kopiuj <li>) lub usuwać. -->
           <section id="jak">
                <div class="wrap">
@@ -223,7 +265,7 @@
                           <div class="contact-list">
     <span class="label">Dane kontaktowe</span>
 
-    <a>Mateusz Krakowiecki</a>
+    <a>Barbara Krakowiecka</a>
     
     <a href="tel:+48530414590">+48 530 414 590</a>
     <a href="tel:+48663591930">+48 663 591 930</a>
@@ -292,7 +334,7 @@
      <footer>
           <div class="wrap">
                <div><a class="logo" href="#top">SWEE<i>T</i>O</a>
-                    <p style="margin:8px 0 0">Mateusz Krakowiecki</p>
+                    <p style="margin:8px 0 0">Barbara Krakowiecka</p>
                     <p style="margin:8px 0 0">Rybnik / Śląsk</p>
                </div>
                <div>
@@ -308,8 +350,9 @@
                     <span class="label">Adres E-mail:</span>
                     <a href="mailto:imprezysweeto@gmail.com">imprezysweeto@gmail.com</a>
                </div>
-               <div><a href="#polityka">Polityka prywatności</a><br><span class="note">[DO UZUPEŁNIENIA — treść
-                         polityki]</span></div>
+               <div>
+    <a href="polityka.html">Polityka prywatności</a><br>
+</div>
                <p class="copy">© <span id="yr">2026</span> SWEETO. Wszelkie prawa zastrzeżone.</p>
           </div>
      </footer>
