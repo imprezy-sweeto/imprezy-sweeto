@@ -118,7 +118,7 @@
         if (d === '') { this.value = ''; return; }
 
         var n = Number(d);
-        if (n > 300) n = 300;
+        if (n > 99999) n = 99999;
         if (n < 1) n = 1;
 
         this.value = n;
@@ -218,70 +218,130 @@
             });
     });
 
+      function initPhotos() {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.gallery .g-item'));
+    if (!items.length || window.__swPhotosInit) return;
+    window.__swPhotosInit = true;
+
+    var lb = document.createElement('div');
+    lb.className = 'lb';
+    lb.hidden = true;
+    lb.innerHTML =
+      '<button type="button" class="lb-close" aria-label="Zamknij">&times;</button>' +
+      '<button type="button" class="lb-nav lb-prev" aria-label="Poprzednie">&#10094;</button>' +
+      '<img class="lb-img" alt="">' +
+      '<button type="button" class="lb-nav lb-next" aria-label="Następne">&#10095;</button>' +
+      '<div class="lb-count"></div>';
+    document.body.appendChild(lb);
+
+    var img = lb.querySelector('.lb-img');
+    var count = lb.querySelector('.lb-count');
+    var cur = 0, x0 = null;
+
+    function show(i) {
+      cur = (i + items.length) % items.length;
+      var src = items[cur].querySelector('img');
+      img.src = src.currentSrc || src.src;
+      img.alt = src.alt;
+      count.textContent = (cur + 1) + ' / ' + items.length;
+    }
+    function open(i) { show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; }
+    function close() { lb.hidden = true; document.body.style.overflow = ''; }
+
+    items.forEach(function (el, i) {
+      el.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+    });
+
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', function () { show(cur - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', function () { show(cur + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', function (e) {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+
+    lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) show(dx < 0 ? cur + 1 : cur - 1);
+      x0 = null;
+    });
+  }
+
+  function initVideos() {
+    var items = Array.prototype.slice.call(document.querySelectorAll('.sw-vid'));
+    if (!items.length || window.__swVideosInit) return;
+    window.__swVideosInit = true;
+
+    var lb = document.createElement('div');
+    lb.className = 'sw-lb';
+    lb.innerHTML =
+      '<button type="button" class="sw-x" aria-label="Zamknij">&times;</button>' +
+      '<button type="button" class="sw-prev" aria-label="Poprzedni">&#10094;</button>' +
+      '<video controls playsinline></video>' +
+      '<button type="button" class="sw-next" aria-label="Następny">&#10095;</button>' +
+      '<div class="sw-cnt"></div>';
+    document.body.appendChild(lb);
+
+    var vid = lb.querySelector('video');
+    var cnt = lb.querySelector('.sw-cnt');
+    var cur = 0, x0 = null;
+
+    function show(i) {
+      cur = (i + items.length) % items.length;
+      vid.src = items[cur].getAttribute('data-src');
+      vid.load();
+      var p = vid.play();
+      if (p && p.catch) p.catch(function () {});
+      cnt.textContent = (cur + 1) + ' / ' + items.length;
+    }
+    function open(i) { show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+    function close() {
+      vid.pause(); vid.removeAttribute('src'); vid.load();
+      lb.classList.remove('open'); document.body.style.overflow = '';
+    }
+
+    items.forEach(function (el, i) {
+      el.addEventListener('click', function () { open(i); });
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(i); }
+      });
+    });
+
+    lb.querySelector('.sw-x').addEventListener('click', close);
+    lb.querySelector('.sw-prev').addEventListener('click', function () { show(cur - 1); });
+    lb.querySelector('.sw-next').addEventListener('click', function () { show(cur + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(cur - 1);
+      if (e.key === 'ArrowRight') show(cur + 1);
+    });
+
+    lb.addEventListener('touchstart', function (e) {
+      x0 = (e.target === vid) ? null : e.touches[0].clientX;
+    }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 50) show(dx < 0 ? cur + 1 : cur - 1);
+      x0 = null;
+    });
+  }
+
+  function init() { initPhotos(); initVideos(); }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
 
-/**    f.addEventListener('submit', function (ev) {
-        ev.preventDefault();
-
-        var ok = true;
-        function check(el, msg) {
-            showError(el, msg);
-            if (msg) ok = false;
-        }
-        function val(name) { return f[name].value.trim(); }
-
-        var tel = val('tel'), mail = val('mail');
-        var dateRaw = val('data');
-        var date = parsePL(dateRaw); // rrrr-mm-dd, do porównań
-
-        check(f.imie, val('imie') ? '' : 'Podaj imię.');
-
-        if (!tel && !mail) {
-            check(f.tel, 'Podaj numer telefonu lub adres e-mail.');
-            check(f.mail, '');
-        } else {
-            check(f.tel, tel && !/^[+\d][\d\s-]{6,}$/.test(tel) ? 'Podaj poprawny numer telefonu.' : '');
-            check(f.mail, mail && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(mail) ? 'Podaj poprawny adres e-mail.' : '');
-        }
-
-        if (!dateRaw) check(f.data, 'Wybierz datę wydarzenia.');
-        else if (!date) check(f.data, 'Podaj poprawną datę w formacie dd.mm.rrrr.');
-        else if (date < minDate || date > maxDate) check(f.data, 'Podaj datę od dziś do końca ' + yearsLimit + ' roku.');
-        else check(f.data, '');
-
-        check(f.miejsce, val('miejsce') ? '' : 'Podaj miejsce wydarzenia.');
-        check(f.rodzaj, val('rodzaj') ? '' : 'Wybierz rodzaj wydarzenia.');
-        check(f.msg, val('msg') ? '' : 'Napisz krótką wiadomość.');
-        check($('zgoda'), $('zgoda').checked ? '' : 'Zaznacz zgodę, aby wysłać zapytanie.');
-
-        if (!ok) {
-            var first = f.querySelector('.invalid input, .invalid select, .invalid textarea');
-            if (first) first.focus();
-            return;
-        }
-
-        var datePL = date.split('-').reverse().join('.');
-        var atrakcje = [].map.call(document.querySelectorAll('#chips input:checked'), function (c) {
-            return c.value;
-        }).join(', ');
-
-        var body =
-            'Imię: ' + val('imie') +
-            '\nTelefon: ' + tel +
-            '\nE-mail: ' + mail +
-            '\nData wydarzenia: ' + datePL +
-            '\nMiejsce: ' + val('miejsce') +
-            '\nRodzaj wydarzenia: ' + val('rodzaj') +
-            '\nLiczba gości: ' + val('goscie') +
-            '\nAtrakcje: ' + atrakcje +
-            '\n\nWiadomość:\n' + val('msg');
-
-        var subject = 'Zapytanie o termin — ' + val('rodzaj') + ', ' + datePL;
-        window.location.href = 'mailto:imprezysweeto@gmail.com?subject=' + encodeURIComponent(subject) +
-            '&body=' + encodeURIComponent(body);
-
-        f.reset();
-        fp.clear();
-        $('ok').style.display = 'block';
-        $('ok').scrollIntoView({ block: 'center' });
-    }); */
